@@ -3,26 +3,26 @@
 <script src="js/anime.min.js"></script>
 <script>
   window.onload=function() {
-    const b1 = document.getElementById("#button1");
+    const b1 = document.getElementById("button1");
         b1.setAttribute("z-index","9999");
     /* c.setAttribute("z-index","9999"); */
 };
    AFRAME.registerComponent("registerevents", {
     init: function () {
       const buttonUp = function () {
-        const b1 = document.getElementById("#button1");
+        const b1 = document.getElementById("button1");
         b1.setAttribute("z-index","9999");
-        const b2 = document.getElementById("#button2");
+        const b2 = document.getElementById("button2");
         b2.setAttribute("z-index","9999");
-        const b3 = document.getElementById("#button3");
+        const b3 = document.getElementById("button3");
         b3.setAttribute("z-index","9999");
       };
       const buttonDown = function () {
-        const b1 = document.getElementById("#button1");
+        const b1 = document.getElementById("button1");
         b1.setAttribute("z-index","-9999");
-        const b2 = document.getElementById("#button2");
+        const b2 = document.getElementById("button2");
         b2.setAttribute("z-index","-9999");
-        const b3 = document.getElementById("#button3");
+        const b3 = document.getElementById("button3");
         b3.setAttribute("z-index","-9999");
       };
       // マーカーを検出したイベントの登録
