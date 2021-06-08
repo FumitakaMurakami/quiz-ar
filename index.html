@@ -2,15 +2,28 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 <script src="js/anime.min.js"></script>
 <script>
+  window.onload=function() {
+    const c = document.getElementsByClassName("buttons");
+    console.log(c);
+    /* c.setAttribute("z-index","9999"); */
+};
    AFRAME.registerComponent("registerevents", {
     init: function () {
       const buttonUp = function () {
-        const c = document.getElementsByClassName("buttons");
-        c.setAttribute("z-index","9999");
+        const b1 = document.getElementById("#button1");
+        b1.setAttribute("z-index","9999");
+        const b2 = document.getElementById("#button2");
+        b2.setAttribute("z-index","9999");
+        const b3 = document.getElementById("#button3");
+        b3.setAttribute("z-index","9999");
       };
       const buttonDown = function () {
-        const c = document.getElementsByClassName("buttons");
-        c.setAttribute("z-index","-9999");
+        const b1 = document.getElementById("#button1");
+        b1.setAttribute("z-index","-9999");
+        const b2 = document.getElementById("#button2");
+        b2.setAttribute("z-index","-9999");
+        const b3 = document.getElementById("#button3");
+        b3.setAttribute("z-index","-9999");
       };
       // マーカーを検出したイベントの登録
       marker.addEventListener("markerFound", function () {
@@ -23,11 +36,7 @@
       });
     },
   });
-  window.onload=function() {
-    const c = document.getElementsByClassName("buttons");
-    console.log(c);
-    /* c.setAttribute("z-index","9999"); */
-};
+  
   
   function run(id) {
         console.log("#" + id);
