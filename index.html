@@ -4,24 +4,22 @@
 <script>
    AFRAME.registerComponent("registerevents", {
     init: function () {
-      let marker = this.el;
-      const playmv = function () {
-        const v = document.querySelector("#mv");
-        v.setAttribute("material", "src", "#music_on");
-        v.play();
+      const buttonUp = function () {
+        const c = document.getElementsByClassName("buttons");
+        c.setAttribute("z-index","9999");
       };
-      const stopmv = function () {
-        const v = document.querySelector("#mv");
-        v.pause();
+      const buttonDown = function () {
+        const c = document.getElementsByClassName("buttons");
+        c.setAttribute("z-index","-9999");
       };
       // マーカーを検出したイベントの登録
       marker.addEventListener("markerFound", function () {
-        playmv();
+        buttonUp();
       });
 
       // マーカーを見失ったイベントの登録
       marker.addEventListener("markerLost", function () {
-        stopmv();
+        buttonDown();
       });
     },
   });
@@ -72,16 +70,17 @@
     font-size: 1.25em;
     color: transparent;
   }
-  .loader{
+  /* .loader{
     z-index: 9999;;
     position: absolute;
-  }
+  } */
   .buttons{
     color: white;
-    
+    position: absolute;
     height: 80px;
     width: 120px;
     bottom: 0px;
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +111,7 @@
     
   >
     
-  <a-marker preset="hiro">
+  <a-marker preset="hiro" registerevents>
     <a-entity
         id="sphere"
         geometry="primitive: box; radius: 1"
