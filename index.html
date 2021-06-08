@@ -78,13 +78,20 @@
   }
   .buttons{
     color: white;
+    height: 2px;
+    width: 5px;
     position: absolute;
     bottom: 100px;
-    left: 0;
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  #button1{
+    left: 0;
+  }
+  #button1{
+    left: 10px;
   }
 </style>
 
@@ -92,8 +99,8 @@
 <body>
   <div class="loader" id="info">
     <ul>
-      <li><button class="buttons"type="button">回答１</button></li>
-      <li><button class="buttons"type="button">回答１</button></li>
+      <li><button class="buttons"type="button1">回答１</button></li>
+      <li><button class="buttons"type="button2">回答１</button></li>
     </ul>
   </div>
   <a-scene
