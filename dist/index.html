@@ -1,0 +1,103 @@
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<script src="js/anime.min.js"></script>
+<script>
+  window.onload=function() {
+    console.log(document.getElementById("#cam").fov);
+};
+  
+  function run(id) {
+        console.log("#" + id);
+        const mid = "#" + id;
+        var entity = document.querySelector(mid);
+
+        var test = {
+          posX: 0,
+          posY: 0,
+        };
+
+        anime({
+          targets: test,
+          posY: 0,
+          posX: 180,
+          elasticity: 10000,
+          update: function () {
+            entity.setAttribute("rotation", {
+              x: test.posX,
+              y: 0,
+              z: 0,
+            });
+            /* alert('clicked'); */
+          },
+          direction: "alternate",
+          delay: 268,
+          loop: false,
+        });
+      }
+      AFRAME.registerComponent("turn", {
+        update: function () {
+          this.el.addEventListener("click", function (evt) {
+            run(this.id);
+          });
+        },
+      });
+      
+    </script>
+<style>
+  .after-click {
+    text-align: center;
+    font-size: 1.25em;
+    color: transparent;
+  }
+  
+</style>
+
+
+<body>
+  
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
+    
+  >
+    
+  <a-marker preset="hiro">
+    <a-entity
+        id="sphere"
+        geometry="primitive: box; radius: 1"
+        material="color: #cc0000"
+        scale="1 0.05 2"
+        position="1 0 0"
+        turn
+      >
+      </a-entity>
+      <a-entity
+        id="bluebox"
+        geometry="primitive: box; radius: 1"
+        material="color: blue"
+        scale="1 0.05 2"
+        position="-1 0 0"
+        turn
+      >
+    </a-entity>
+      <a-entity
+        id="redbox"
+        geometry="primitive: box; radius: 1"
+        material="color: red"
+        scale="1 0.05 2"
+        position="0 1 0"
+        turn
+      >
+      </a-entity>
+  </a-marker>
+    
+    <a-entity camera fov="10000"><a-entity
+      id="cam"
+      cursor="rayOrigin: mouse; fuse:false"
+      material="color: black; shader: flat"
+    >
+    </a-entity>
+  </a-scene>
+</body>
