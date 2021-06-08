@@ -76,7 +76,24 @@
     height: 100%;
     width: 100%;
   }
-  .buttons{
+  #info ul{
+   display: flex;
+   list-style: none;
+   padding:0;
+   margin:0;
+   width:100%;
+   z-index: 9999;
+}
+#info li{
+   justify-content: center;
+   align-items: center;
+   width: 50%;
+   padding:0;
+   margin:0;
+   font-size: 14px;
+   border-right: 1px solid #fff;
+}
+  /* .buttons{
     color: white;
     position: absolute;
     bottom: 100px;
@@ -85,13 +102,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
 </style>
 
 
 <body>
   <div class="loader" id="info">
-    <button class="buttons"type="button">回答１</button>
+    <ul>
+      <li><button class="buttons"type="button">回答１</button></li>
+      <li><button class="buttons"type="button">回答１</button></li>
+    </ul>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
