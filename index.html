@@ -82,12 +82,10 @@
           });
         },
       });
-    let button1 = document.getElementById('button1');
-    button1.addEventListener('click', run("shpere")); 
-    let button2 = document.getElementById('button2');
-    button2.addEventListener('click', run("bluebox"));
-    let button3 = document.getElementById('button3');
-    button3.addEventListener('click', run("redbox")); 
+      function button1event(){
+        run("shpere")
+      }
+    
 </script>
 <style>
   .after-click {
@@ -135,7 +133,7 @@
 
 <body>
   <div class="loader" id="info">
-    <button class="buttons" type="button" id="button1">回答１</button>
+    <button class="buttons" type="button" id="button1" onclick="button1event">回答１</button>
     <button class="buttons" type="button" id="button2">回答２</button>
     <button class="buttons" type="button" id="button3">回答３</button>
   </div>
