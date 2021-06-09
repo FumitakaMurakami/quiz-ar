@@ -10,6 +10,7 @@
   }; */
    AFRAME.registerComponent("registerevents", {
     init: function () {
+      let marker = this.el;
       const buttonUp = function () {
         const b1 = document.getElementById("button1");
         b1.classList.remove("buttons");
