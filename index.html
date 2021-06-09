@@ -4,8 +4,9 @@
 <script>
   window.onload=function() {
     const b1 = document.getElementById("button1");
-        b1.style.z-index="9999";
-        console.log(b1)
+    $("#button1").css({'z-index':'9999'});
+        console.log(b1.style)
+        
     /* c.setAttribute("z-index","9999"); */
   };
    AFRAME.registerComponent("registerevents", {
