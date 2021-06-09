@@ -4,8 +4,9 @@
 <script>
   window.onload=function() {
     const b1 = document.getElementById("button1");
-    $("#button1").css({'z-index':'9999'});
-        console.log(b1.style)
+    b1.classList.remove("#button1");
+    b1.classList.toggle("after-button1");
+    console.log(b1.style)
         
     /* c.setAttribute("z-index","9999"); */
   };
@@ -93,19 +94,25 @@
     height: 80px;
     width: 120px;
     bottom: 0px;
-    z-index: -9999;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   #button1{
     left: 0;
+    z-index: -9999;
+  }
+  .after-button1{
+    left: 0;
+    z-index: 9999;
   }
   #button2{
     left: 140px;
+    z-index: -9999;
   }
   #button3{
     left: 280px;
+    z-index: -9999;
   }
 </style>
 
