@@ -87,7 +87,16 @@
         run("sphere");
         console.log("funcEnd");
       }
-    
+      function button2event(){
+        console.log("funcRun");
+        run("bulebox");
+        console.log("funcEnd");
+      }
+      function button3event(){
+        console.log("funcRun");
+        run("redbox");
+        console.log("funcEnd");
+      }
 </script>
 <style>
   .after-click {
@@ -136,8 +145,8 @@
 <body>
   <div class="loader" id="info">
     <button class="buttons" type="button" id="button1" onclick="button1event()">回答１</button>
-    <button class="buttons" type="button" id="button2">回答２</button>
-    <button class="buttons" type="button" id="button3">回答３</button>
+    <button class="buttons" type="button" id="button2" onclick="button2event()">回答２</button>
+    <button class="buttons" type="button" id="button3" onclick="button3event()">回答３</button>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
