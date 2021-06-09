@@ -14,19 +14,25 @@
     init: function () {
       const buttonUp = function () {
         const b1 = document.getElementById("button1");
-        b1.setAttribute("position","0 0 9999");
+        b1.classList.remove("buttons");
+        b1.classList.toggle("after-buttons");
         const b2 = document.getElementById("button2");
-        b2.setAttribute("position","0 0 9999");
+        b2.classList.remove("buttons");
+        b2.classList.toggle("after-buttons");
         const b3 = document.getElementById("button3");
-        b3.setAttribute("position","0 0 9999");
+        b3.classList.remove("buttons");
+        b3.classList.toggle("after-buttons");
       };
       const buttonDown = function () {
         const b1 = document.getElementById("button1");
-        b1.setAttribute("position","0 0 -9999");
+        b1.classList.remove("after-buttons");
+        b1.classList.toggle("buttons");
         const b2 = document.getElementById("button2");
-        b2.setAttribute("position","0 0 -9999");
+        b2.classList.remove("after-buttons");
+        b2.classList.toggle("buttons");
         const b3 = document.getElementById("button3");
-        b3.setAttribute("position","0 0 -9999");
+        b3.classList.remove("after-buttons");
+        b3.classList.toggle("buttons");
       };
       // マーカーを検出したイベントの登録
       marker.addEventListener("markerFound", function () {
