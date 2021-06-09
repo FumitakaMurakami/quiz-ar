@@ -4,7 +4,7 @@
 <script>
   window.onload=function() {
     const b1 = document.getElementById("button1");
-    b1.classList.remove("#button1");
+    b1.classList.remove("buttons");
     b1.classList.toggle("after-button1");
     console.log(b1.style)
         
@@ -93,6 +93,7 @@
     position: absolute;
     height: 80px;
     width: 120px;
+    z-index: -9999;
     bottom: 0px;
     display: flex;
     justify-content: center;
@@ -100,11 +101,17 @@
   }
   #button1{
     left: 0;
-    z-index: -9999;
   }
-  .after-button1{
-    left: 0;
+  .after-buttons{
+    color: white;
+    position: absolute;
+    height: 80px;
+    width: 120px;
     z-index: 9999;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   #button2{
     left: 140px;
