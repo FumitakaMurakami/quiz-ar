@@ -83,7 +83,9 @@
         },
       });
       function button1event(){
-        run("shpere")
+        console.log("funcRun");
+        run("shpere");
+        console.log("funcEnd");
       }
     
 </script>
@@ -133,7 +135,7 @@
 
 <body>
   <div class="loader" id="info">
-    <button class="buttons" type="button" id="button1" onclick="button1event">回答１</button>
+    <button class="buttons" type="button" id="button1" onclick="button1event()">回答１</button>
     <button class="buttons" type="button" id="button2">回答２</button>
     <button class="buttons" type="button" id="button3">回答３</button>
   </div>
