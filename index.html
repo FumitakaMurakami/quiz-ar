@@ -97,8 +97,31 @@
         run("redbox");
         console.log("funcEnd");
       }
+      function quizstart(){
+        const b1 = document.getElementById("quizstartbutton");
+        b1.classList.remove("start");
+        b1.classList.toggle("after-start");
+      }
 </script>
 <style>
+  .start {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .after-start {
+    text-align: center;
+    font-size: 1em;
+    color: transparent;
+    z-index: -9999;
+  }
   .after-click {
     text-align: center;
     font-size: 1.25em;
@@ -109,6 +132,17 @@
     position: absolute;
   } */
   .buttons{
+    color: white;
+    position: absolute;
+    height: 80px;
+    width: 120px;
+    z-index: -9999;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .startbutton{
     color: white;
     position: absolute;
     height: 80px;
@@ -148,6 +182,10 @@
     <button class="buttons" type="button" id="button2" onclick="button2event()">回答２</button>
     <button class="buttons" type="button" id="button3" onclick="button3event()">回答３</button>
   </div>
+  <div class="start">
+    <div>クイズAR！</div>
+    <button class="startbutton" type="button" id="quizstartbutton" onclick="quizstart()">クイズAR！スタート！</button>
+  </div> 
   <a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
@@ -185,6 +223,17 @@
       >
       </a-entity>
   </a-marker>
+  <a-nft
+      type="nft"
+      url="https://fumitakamurakami.github.io/ARJS/1000en"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+      registerevents
+    >
+
+  </a-ntf> 
     
     <a-entity camera fov="10000"><a-entity
       id="cam"
