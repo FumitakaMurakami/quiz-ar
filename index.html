@@ -90,6 +90,13 @@
       function button2event(){
         console.log("funcRun");
         run("bluebox");
+        var effect = document.createElement('a-entity');
+        effect.setAttribute('position', pointStr);
+        effect.setAttribute('raycaster', 'enabled: false');
+        effect.setAttribute('particle-system', 'color: #ff0, #ff9;maxParticleCount: 100;maxAge: ' + (particleAge / 1000) + ';velocityValue:0 -1 0; accelerationValue: 0 0.5 0; duration: 1;');
+        effect.setAttribute('sound', 'src: #correct; autoplay: true');
+        var scene = document.querySelector('a-scene');
+        scene.appendChild(effect);
         console.log("funcEnd");
       }
       function button3event(){
@@ -204,7 +211,12 @@
     arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
     
   >
-    
+  <a-assets>
+    <audio src="./audio/Correct.mp3" id="correct"></audio>
+  </a-assets>
+  <a-assets>
+    <audio src="./audio/Incorrect.mp3" id="incorrect"></audio>
+  </a-assets>
   <a-marker preset="hiro" registerevents>
     <a-entity
         id="sphere"
