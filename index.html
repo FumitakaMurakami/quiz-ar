@@ -98,7 +98,7 @@
         console.log("funcEnd");
       }
       function quizstart(){
-        const b1 = document.getElementById("quizstartbutton");
+        const b1 = document.getElementById("quizstart");
         b1.classList.remove("start");
         b1.classList.toggle("after-start");
       }
@@ -153,6 +153,17 @@
     justify-content: center;
     align-items: center;
   }
+  .after-startbutton{
+    color: white;
+    position: absolute;
+    height: 80px;
+    width: 120px;
+    z-index: -9999;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   #button1{
     left: 0;
   }
@@ -182,7 +193,7 @@
     <button class="buttons" type="button" id="button2" onclick="button2event()">回答２</button>
     <button class="buttons" type="button" id="button3" onclick="button3event()">回答３</button>
   </div>
-  <div class="start">
+  <div class="start" id="quizstart">
     <div>クイズAR！</div>
     <button class="startbutton" type="button" id="quizstartbutton" onclick="quizstart()">クイズAR！スタート！</button>
   </div> 
