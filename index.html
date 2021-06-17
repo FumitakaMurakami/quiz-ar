@@ -108,7 +108,8 @@
         const b1 = document.getElementById("quizstart");
         b1.classList.remove("start");
         b1.classList.toggle("after-start");
-        const incorrect = document.getElementById("incorrect");
+        const incorrect =  document.querySelector('[sound]');
+        incorrect.components.sound.playSound();
         incorrect.playSound;
         console.log(incorrect)
       }
