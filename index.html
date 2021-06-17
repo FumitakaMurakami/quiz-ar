@@ -22,8 +22,8 @@
         b3.classList.remove("buttons");
         b3.classList.toggle("after-buttons");
         const di=document.getElementById("quiz");
-        di.classList.remove("buttons");
-        di.classList.toggle("after-buttons");
+        di.classList.remove("startquiz");
+        di.classList.toggle("after-startquiz");
         console.log(b1);
       };
       const buttonDown = function () {
@@ -37,8 +37,8 @@
         b3.classList.remove("after-buttons");
         b3.classList.toggle("buttons");
         const di=document.getElementById("quiz");
-        di.classList.remove("after-buttons");
-        di.classList.toggle("buttons");
+        di.classList.remove("after-startquiz");
+        di.classList.toggle("startquiz");
       };
       // マーカーを検出したイベントの登録
       marker.addEventListener("markerFound", function () {
@@ -137,6 +137,26 @@
     justify-content: center;
     align-items: center;
   }
+  .startquiz {
+    color: white;
+    position: absolute;
+    font-size:50px;
+    z-index: -9999;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .after-startquiz {
+    color: white;
+    position: absolute;
+    font-size:50px;
+    z-index: 9999;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .after-start {
     text-align: center;
     font-size: 1em;
@@ -211,7 +231,7 @@
 
 <body>
   <div class="loader" id="info">
-    <div class="buttons" id="quiz">1000円札に描かれているのは？</div>
+    <div class="startquiz" id="quiz">1000円札に描かれているのは？</div>
     <button class="buttons" type="button" id="button1" onclick="button1event()">福沢諭吉</button>
     <button class="buttons" type="button" id="button2" onclick="button2event()">野口英世</button>
     <button class="buttons" type="button" id="button3" onclick="button3event()">聖徳太子</button>
