@@ -85,7 +85,8 @@
       function button1event(){
         console.log("funcRun");
         run("sphere");
-        const incorrect =  document.querySelector('[sound]');
+        const incorrect =  document.querySelector('#incorr');
+        incorrect.muted = false;
         incorrect.components.sound.playSound();
         incorrect.playSound;
         console.log("funcEnd");
@@ -93,14 +94,16 @@
       function button2event(){
         console.log("funcRun");
         run("bluebox");
-        const correct =  document.querySelector('[sound]');
+        const correct =  document.querySelector('#corr');
+        correct.muted = false;
         correct.components.sound.playSound();
         console.log("funcEnd");
       }
       function button3event(){
         console.log("funcRun");
         run("redbox");
-        const incorrect =  document.querySelector('[sound]');
+        const incorrect =  document.querySelector('#incorr');
+        incorrect.muted = false;
         incorrect.components.sound.playSound();
         incorrect.playSound;
         console.log("funcEnd");
@@ -112,7 +115,7 @@
         const incorrect =  document.querySelector('#incorr');
         console.log(incorrect);
         incorrect.components.sound.playSound();
-        incorrect.muted = false;
+        
 
       }
 </script>
