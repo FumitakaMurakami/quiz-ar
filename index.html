@@ -108,15 +108,9 @@
         const b1 = document.getElementById("quizstart");
         b1.classList.remove("start");
         b1.classList.toggle("after-start");
-        /* const incorrect = document.getElementById("incorrect");
-        incorrect.setAttribute('position', pointStr); */
-        var effect = document.createElement('a-entity');
-        effect.setAttribute('position', pointStr);
-        effect.setAttribute('raycaster', 'enabled: false');
-        effect.setAttribute('particle-system', 'color: #ff0, #ff9;maxParticleCount: 100;maxAge: ' + (particleAge / 1000) + ';velocityValue:0 -1 0; accelerationValue: 0 0.5 0; duration: 1;');
-        effect.setAttribute('sound', 'src: #correct; autoplay: true');
-        var scene = document.querySelector('a-scene');
-        scene.appendChild(effect);
+        const incorrect = document.getElementById("incorrect");
+        incorrect.setAttribute('position', pointStr);
+        
       }
 </script>
 <style>
@@ -227,7 +221,7 @@
     <audio src="./audio/Incorrect.mp3" id="incorrect"></audio>
   </a-assets> -->
   <a-entity id="incorrect" geometry="primitive: plane" material="color: blue"
-  position="-10 0 0" sound="src: url(./audio/Incorrect.mp3); autoplay: true"></a-entity>
+  position="-10 0 0" sound="src: url(./audio/Incorrect.mp3); autoplay: false"></a-entity>
 
   <a-marker preset="hiro" registerevents>
     <a-entity
