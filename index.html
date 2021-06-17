@@ -85,23 +85,21 @@
       function button1event(){
         console.log("funcRun");
         run("sphere");
+        incorrect.components.sound.playSound();
+        incorrect.playSound;
         console.log("funcEnd");
       }
       function button2event(){
         console.log("funcRun");
         run("bluebox");
-        var effect = document.createElement('a-entity');
-        effect.setAttribute('position', pointStr);
-        effect.setAttribute('raycaster', 'enabled: false');
-        effect.setAttribute('particle-system', 'color: #ff0, #ff9;maxParticleCount: 100;maxAge: ' + (particleAge / 1000) + ';velocityValue:0 -1 0; accelerationValue: 0 0.5 0; duration: 1;');
-        effect.setAttribute('sound', 'src: #correct; autoplay: true');
-        var scene = document.querySelector('a-scene');
-        scene.appendChild(effect);
+        
         console.log("funcEnd");
       }
       function button3event(){
         console.log("funcRun");
         run("redbox");
+        incorrect.components.sound.playSound();
+        incorrect.playSound;
         console.log("funcEnd");
       }
       function quizstart(){
@@ -109,9 +107,6 @@
         b1.classList.remove("start");
         b1.classList.toggle("after-start");
         const incorrect =  document.querySelector('[sound]');
-        incorrect.components.sound.playSound();
-        incorrect.playSound;
-        console.log(incorrect)
       }
 </script>
 <style>
@@ -221,6 +216,7 @@
   <a-assets>
     <audio src="./audio/Incorrect.mp3" id="incorrect"></audio>
   </a-assets>
+  <a-entity sound="src: #correct"></a-entity>
   <a-entity sound="src: #incorrect"></a-entity>
 
   <a-marker preset="hiro" registerevents>
