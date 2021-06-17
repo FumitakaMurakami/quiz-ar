@@ -94,6 +94,7 @@
         console.log("funcRun");
         run("bluebox");
         const correct =  document.querySelector('[sound]');
+        correct.components.sound.playSound();
         console.log("funcEnd");
       }
       function button3event(){
@@ -108,7 +109,7 @@
         const b1 = document.getElementById("quizstart");
         b1.classList.remove("start");
         b1.classList.toggle("after-start");
-        const incorrect =  document.getElementById('#incorrect');
+        const incorrect =  document.querySelector('[sound]');
         /* incorrect.sound.playSound(); */
         incorrect.playSound;
       }
