@@ -110,6 +110,7 @@
         b1.classList.remove("start");
         b1.classList.toggle("after-start");
         const incorrect =  document.querySelector('[sound]');
+        console.log("funcEnd");
         incorrect.sound.playSound();
         incorrect.playSound;
       }
@@ -219,10 +220,10 @@
     <audio src="./audio/Correct.mp3" id="correct"></audio>
   </a-assets>
   <a-assets>
-    <audio src="./audio/Incorrect.mp3"></audio>
+    <audio src="./audio/Incorrect.mp3" id="incorrect"></audio>
   </a-assets>
   <a-entity sound="src: #correct"></a-entity>
-  <a-entity sound="src: #incorrect" id="incorrect"></a-entity>
+  <a-entity sound="src: #incorrect" ></a-entity>
 
   <a-marker preset="hiro" registerevents>
     <a-entity
