@@ -105,7 +105,7 @@
         correct.components.sound.playSound();
         const redring = document.getElementById("redring");
         redring.setAttribute("opacity","1");
-        window.setTimeout(console.log("stop"), 2000);
+        window.setTimeout(colorReset(), 2000);
         /* redring.setAttribute("opacity","0"); */
         console.log("funcEnd");
       }
@@ -123,6 +123,10 @@
         b1.classList.remove("start");
         b1.classList.toggle("after-start");
 
+      }
+      function colorReset(){
+        const redring = document.getElementById("redring");
+        redring.setAttribute("opacity","0");
       }
 </script>
 <style>
