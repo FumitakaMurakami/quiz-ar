@@ -105,7 +105,8 @@
         correct.components.sound.playSound();
         const redring = document.getElementById("redring");
         redring.setAttribute("opacity","1");
-        window.setTimeout(redring.setAttribute("opacity","0"), 2000);
+        window.setTimeout(console.log("stop"), 2000);
+        redring.setAttribute("opacity","0");
         console.log("funcEnd");
       }
       function button3event(){
