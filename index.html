@@ -105,6 +105,7 @@
         correct.components.sound.playSound();
         const redring = document.getElementById("redring");
         redring.setAttribute("opacity","1");
+        window.setTimeout(redring.setAttribute("opacity","0"), 2000);
         console.log("funcEnd");
       }
       function button3event(){
@@ -120,7 +121,6 @@
         const b1 = document.getElementById("quizstart");
         b1.classList.remove("start");
         b1.classList.toggle("after-start");
-        
 
       }
 </script>
@@ -263,7 +263,7 @@
   <a-entity sound="src: #correct" id="corr"></a-entity>
   <a-entity sound="src: #incorrect" id="incorr"></a-entity>
   <a-marker preset="hiro" registerevents>
-    <a-ring id="redring" color="red" radius="0.5" position="0 0 0" rotation="-135 0 0" opacity="0"></a-circle>
+    <a-ring id="redring" color="red" radius="0.2" position="0 0 0" rotation="-135 0 0" opacity="0"></a-circle>
     <!-- <a-entity
         id="sphere"
         geometry="primitive: box; radius: 1"
