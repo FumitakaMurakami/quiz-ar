@@ -81,6 +81,34 @@
           loop: false,
         });
       }
+      function run2(id) {
+        console.log("#" + id);
+        const mid = "#" + id;
+        var entity = document.querySelector(mid);
+
+        var test = {
+          posX: 0,
+          posY: 0,
+        };
+
+        anime({
+          targets: test,
+          posY: 1,
+          posX: 0,
+          elasticity: 10000,
+          update: function () {
+            entity.setAttribute("position", {
+              x: 0,
+              y: teat.posY,
+              z: 0,
+            });
+            /* alert('clicked'); */
+          },
+          direction: "alternate",
+          delay: 268,
+          loop: false,
+        });
+      }
       AFRAME.registerComponent("turn", {
         update: function () {
           this.el.addEventListener("click", function (evt) {
@@ -105,7 +133,7 @@
         correct.components.sound.playSound();
         const redring = document.getElementById("redring");
         redring.setAttribute("opacity","1");
-        window.setTimeout(colorReset(), 2000);
+        window.setTimeout(colorReset(), 10000);
         /* redring.setAttribute("opacity","0"); */
         console.log("funcEnd");
       }
